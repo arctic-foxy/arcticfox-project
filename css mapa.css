@@ -1,0 +1,434 @@
+/* Definição das variáveis CSS no modo ORIGINAL (padrão) */
+:root,
+body.original-mode {
+    --bg-body: rgb(0, 127, 185);
+    --bg-header-footer: rgb(0, 23, 43);
+    --text-color: white;
+    --bg-nav-btn: rgb(0, 60, 139);
+    --bg-nav-btn-hover: rgb(0, 30, 70);
+    --bg-card-jogo: transparent;
+    --link-color: #ADD8E6;
+}
+/* Modo CLARO */
+body.light-mode {
+    --bg-body: white;
+    --bg-header-footer: rgb(0, 23, 43);
+    --text-color: black;
+    --bg-nav-btn: rgb(0, 60, 139);
+    --bg-nav-btn-hover: rgb(0, 30, 70);
+    --bg-card-jogo: #F0F0F0;
+    --link-color: #0000FF;
+}
+/* Modo ESCURO */
+body.dark-mode {
+    --bg-body: #333333;
+    --bg-header-footer: black;
+    --text-color: white;
+    --bg-nav-btn: #555555;
+    --bg-nav-btn-hover: #777777;
+    --bg-card-jogo: #444444;
+    --link-color: #ADD8E6;
+}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+header {
+    position: relative;
+    background-color: var(--bg-header-footer);
+    transition: background-color 0.3s ease;
+}
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-body);
+    transition: background-color 0.3s ease;
+}
+footer {
+    color:white;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    font-size: smaller;
+    background-color: var(--bg-header-footer);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.imglogo {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+.logo1 {
+    color:white;
+    position: relative;
+    display:flex;
+    justify-content: center;
+}
+/*menu nav*/
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+/*opcoes do menu*/
+nav li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 5px;
+    background-color: var(--bg-nav-btn);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/*ao passar o mouse na opcao*/
+nav li a:hover {
+    background-color: var(--bg-nav-btn-hover);
+    border-color: white;
+    border: none; 
+    outline: 1px solid var(--text-color);
+}
+.destaques {
+    color: var(--text-color);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*secao carrossel*/
+.carousel-section {
+    position:relative;
+    max-width: 80%;
+    margin:2em auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    height:80%;
+    background-color: var(--bg-body); 
+    transition: background-color 0.3s ease;
+}
+.carousel-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: var(--text-color);
+}
+/*Caixa de Slides*/
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height:100%;
+}
+/*Slide Individual*/
+.carousel-slide {
+    min-width:100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.carousel-slide img {
+    width:640px;
+    height:420px;
+    display: flex;
+    border-radius:8px;
+}
+/*Legenda Carrossel*/
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+}
+.carousel-caption h3 {
+    margin:0 0 5px;
+    font-size: 1.5em;
+}
+.carousel-caption p {
+    margin: 0;
+    font-size: 0.9em;
+}
+/*Botao de Navegação*/
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border:none;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius:50px;
+    z-index:10;
+    transition:background-color 0.3s ease;
+}
+.carousel-btn:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.carousel-btn.prev {
+    left: 10px;
+}
+.carousel-btn.next {
+    right: 10px;
+}
+/*Pontos de Navegação (Dots)*/
+.carousel-dots {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255,255, 255,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.dot.active {
+    background-color: white;
+}
+/*Configuração das Reviewa*/
+.reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding:20px 0 ;
+    margin: 0 auto;
+}
+.card-jogo img {
+    border-radius: 8px;
+    display: block;
+    width:640px;
+    height:420px;
+}
+.card-jogo {
+    width: 640px;
+    color: var(--text-color);
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    background-color: var(--bg-card-jogo);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Container que envolve a imagem e o vídeo */
+.media-container {
+    position: relative;
+    width: 640px;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.media-container .review-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: opacity 0.3s ease;
+    z-index: 2; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+}
+.media-container .review-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.3s ease; 
+    z-index: 1;
+}
+.media-container:hover .review-image {
+    opacity: 0; 
+    pointer-events: none; 
+}
+.media-container:hover .review-video {
+    opacity: 1; 
+    pointer-events: auto;
+    z-index: 3;
+}
+/* Estilos para os novos botões de modo */
+.mode-switcher {
+    display: flex;
+    gap: 10px;
+    justify-content:center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.mode-switcher button {
+    padding: 8px 12px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    background-color: var(--bg-nav-btn);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.mode-switcher button:hover {
+    background-color: var(--bg-nav-btn-hover);
+}
+/* Para o botão ativo */
+.mode-switcher button.active-mode {
+    background-color: var(--text-color);
+    color: var(--bg-body);
+    border-color: var(--bg-nav-btn-hover);
+}
+@media (max-width: 768px) {
+    .carousel-section, .reviews {
+        max-width: 95%;
+    }
+    .carousel-slide img, .card-jogo img, .media-container {
+        width: 100%;
+        height: auto;
+    }
+    .card-jogo {
+        width: 100%;
+    }
+    .reviews {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .nav1 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mode-switcher {
+        margin-bottom: 10px;
+    }
+}
+/* Estilos para a seção de Contato */
+.contact-section {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: var(--bg-card-jogo);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.contact-section h2, .contact-section p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Estilos do Formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: var(--bg-body); 
+    color: var(--text-color); 
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--bg-nav-btn-hover); 
+    outline: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(var(--text-color-rgb, 255, 255, 255), 0.7);
+    -webkit-text-fill-color: rgba(var(--text-color-rgb, 255, 255, 255), 0.7);
+    -moz-text-fill-color: rgba(var(--text-color-rgb, 255, 255, 255), 0.7);
+}
+
+/* Para o modo claro, o placeholder deve ser mais escuro */
+body.light-mode .form-group input::placeholder,
+body.light-mode .form-group textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5); 
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.5);
+    -moz-text-fill-color: rgba(0, 0, 0, 0.5);
+}
+/* Estilos para mensagens de erro */
+.error-message {
+    color: #FF6347; 
+    font-size: 0.9em;
+    margin-top: 5px;
+    min-height: 18px;
+}
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #FF6347;
+}
+/* Botão de Envio */
+.contact-form button[type="submit"] {
+    padding: 12px 20px;
+    background-color: var(--bg-nav-btn);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    align-self: center;
+    margin-top: 10px;
+}
+.contact-form button[type="submit"]:hover {
+    background-color: var(--bg-nav-btn-hover);
+}
+/* Media Queries para Responsividade do Formulário */
+@media (max-width: 768px) {
+    .contact-section {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+}
